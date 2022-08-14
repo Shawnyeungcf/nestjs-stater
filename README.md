@@ -27,7 +27,9 @@ $ yarn install
 # development & watch mode
 docker-compose up # brings up all needed services: mysql, phpmyadmin and then nestjs app.
 ```
-App - http://localhost:3000\
+App - http://localhost:3000
+
+
 phpmyadmin - http://localhost:8080
 
 *All default environment variables are added to the `docker-compose.yml` file.
@@ -40,7 +42,7 @@ phpmyadmin - http://localhost:8080
 5. `yarn build`
 6. `yarn start:prod`// start the server
 
-*Should better setup a startup shell script to help automate the steps above.
+*Should better setup a startup shell script to help automate the steps above(`2-6`).
 
 ## License
 
