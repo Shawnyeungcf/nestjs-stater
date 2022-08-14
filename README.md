@@ -22,6 +22,9 @@ $ npm i -g @nestjs/cli # install nestjs cli
 $ yarn install
 ```
 
+## Adminjs & Nestjs
+https://docs.adminjs.co/module-@adminjs_nestjs.html
+
 ## Running the app
 ```bash
 # development & watch mode
@@ -42,6 +45,7 @@ phpmyadmin - http://localhost:8080
 5. `yarn build`
 6. `yarn start:prod`// start the server
 
+*Also you may consider which the `port` using to start the app. (current `3000` hard coded in `main.ts`).
 *Should better setup a startup shell script to help automate the steps above(`2-6`).
 
 ## License
