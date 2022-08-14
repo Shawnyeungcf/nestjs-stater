@@ -6,6 +6,13 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 ## Required Nodejs version = 14
+---
+
+## Before start
+https://docs.adminjs.co\
+https://docs.nestjs.com/first-steps
+
+---
 
 ## Setup local machine
 
