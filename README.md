@@ -9,7 +9,8 @@
 ---
 
 ## Before start
-https://docs.adminjs.co\
+https://docs.adminjs.co
+
 https://docs.nestjs.com/first-steps
 
 ---
