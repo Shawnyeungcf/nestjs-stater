@@ -1,12 +1,54 @@
 version: '3.8'
 
 services:
+  # http://localhost:8080/
+  # login: root
+  # password: password
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    depends_on:
+     - mysqldb
+    ports:
+     - "8080:80"
+    environment:
+      # deafult user name: root
+      MYSQL_ROOT_PASSWORD: password
+      PMA_HOST: mysqlhost
+      PMA_PORT: 3306
+
+  mysqldb:
+    image: mysql:5.7
+    container_name: mysqlhost
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=db
+    ports:
+      - 3306:3306
+    volumes:
+      - db:/var/lib/mysql
+
+  # http://localhost:3000/
   app:
     build:
       context: .
       dockerfile: Dockerfile.dev
+    depends_on:
+     - mysqldb
     volumes:
       - ./:/app:cached
     working_dir: /app
+    environment:
+      - NODE_ENV=development
+      # These environment variables are needed to set on server machine if deploy to production
+      # linux - https://www.serverlab.ca/tutorials/linux/administration-linux/how-to-set-environment-variables-in-linux/
+      - MYSQL_HOST=mysqlhost
+      - MYSQL_DB_NAME=db
+      - MYSQL_PORT=3306
+      - MYSQL_USER=root
+      - MYSQL_USER_PASS=password
     ports:
       - '3000:3000'
+
+# help store the database data on local machine
+volumes:
+  db:
