@@ -32,8 +32,10 @@ docker-compose up # brings up all needed services: mysql, phpmyadmin and then ne
 ```
 App - http://localhost:3000
 
+Aminjs - http://localhost:3000/admin
 
 phpmyadmin - http://localhost:8080
+
 
 *All default environment variables are added to the `docker-compose.yml` file.
 
